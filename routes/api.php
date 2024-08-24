@@ -15,13 +15,22 @@ Route::apiResource('posts', PostController::class);
 
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
-Route::post('/logout', [AuthController::class, 'logout']);
+Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth:sanctum');
 
-//Route::apiResource('produto', [ProductController::class, 'product']);
-//Route::apiResource('categoria', [CategoryController::class, 'category']);
+// Rotas para produtos
+Route::apiResource('produto', ProductController::class)->only([
+  'index', // Listar todos os produtos
+  'store', // Criar um novo produto
+  'show',  // Exibir detalhes de um produto específico
+  'update', // Atualizar um produto existente
+  'destroy' // Excluir um produto
+]);
 
-Route::post('/produto', [ProductController::class, 'product']);
-Route::get('/produto', [ProductController::class, 'product']);
-
-Route::post('/categoria', [CategoryController::class, 'category']);
-Route::get('/categoria', [CategoryController::class, 'category']);
+// Rotas para categorias
+Route::apiResource('categorias', CategoryController::class)->only([
+  'index', // Listar todas as categorias
+  'store', // Criar uma nova categoria
+  'show',  // Exibir detalhes de uma categoria específica
+  'update', // Atualizar uma categoria existente
+  'destroy' // Excluir uma categoria
+]);
