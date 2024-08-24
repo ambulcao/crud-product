@@ -27,7 +27,7 @@ Route::apiResource('produto', ProductController::class)->only([
 ]);
 
 // Rotas para categorias
-Route::apiResource('categorias', CategoryController::class)->only([
+Route::apiResource('categoria', CategoryController::class)->only([
   'index', // Listar todas as categorias
   'store', // Criar uma nova categoria
   'show',  // Exibir detalhes de uma categoria específica
