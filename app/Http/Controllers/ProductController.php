@@ -29,4 +29,9 @@ class ProductController extends Controller
 
         return $product;
     }
+
+    public function index()
+    {
+        return Product::all();
+    }
 }

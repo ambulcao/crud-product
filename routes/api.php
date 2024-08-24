@@ -17,5 +17,11 @@ Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
 Route::post('/logout', [AuthController::class, 'logout']);
 
+//Route::apiResource('produto', [ProductController::class, 'product']);
+//Route::apiResource('categoria', [CategoryController::class, 'category']);
+
 Route::post('/produto', [ProductController::class, 'product']);
+Route::get('/produto', [ProductController::class, 'product']);
+
 Route::post('/categoria', [CategoryController::class, 'category']);
+Route::get('/categoria', [CategoryController::class, 'category']);
