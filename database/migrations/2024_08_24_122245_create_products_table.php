@@ -16,7 +16,7 @@ return new class extends Migration
             $table->date('data_de_validade');
             $table->string('imagem')->nullable();
             $table->unsignedBigInteger('categoria_id'); 
-            $table->foreign('categoria_id')->references('id')->on('categorias'); 
+            $table->foreign('categoria_id')->references('id')->on('categories'); 
             $table->timestamps();
         });
     }
