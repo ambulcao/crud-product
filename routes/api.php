@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -11,11 +12,18 @@ use Illuminate\Support\Facades\Route;
 //    return $request->user();
 //})->middleware('auth:sanctum');
 
+//Rota criada para teste
 Route::apiResource('posts', PostController::class);
 
+//Route::get('/user', [AuthController::class, 'index']);
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
 Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth:sanctum');
+
+Route::apiResource('users', UserController::class)->only([
+  'index', // Listar todos os usuários
+  'show',  // Exibir detalhes de um usuário específico
+]);
 
 // Rotas para produtos
 Route::apiResource('produto', ProductController::class)->only([
