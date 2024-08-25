@@ -1,8 +1,11 @@
 import { createApp } from 'vue'
-import './style.css'
+//import './style.css' 
+import { createPinia } from 'pinia'
 import App from './App.vue'
-import router from './router/index.tsx' // Importe o roteador
+import router from './router/index.tsx' 
 
-createApp(App)
-  .use(router) // Use o roteador na aplicação
-  .mount('#app')
+const app = createApp(App)
+const pinia = createPinia() 
+app.use(pinia) 
+app.use(router) 
+app.mount('#app')
