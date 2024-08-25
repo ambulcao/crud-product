@@ -236,3 +236,22 @@ td {
     ring-offset-color: #1e293b;
     /* slate-800 */
 }
+
+
+/* Em seu arquivo style.css ou no componente Vue */
+
+#productsTable th {
+    background-color: #007bff;
+    /* Cor de fundo azul para o cabeçalho */
+    color: white;
+}
+
+#productsTable td {
+    vertical-align: middle;
+    /* Alinhamento vertical das células */
+}
+
+#productsTable .btn {
+    margin-right: 5px;
+    /* Espaçamento entre os botões */
+}
