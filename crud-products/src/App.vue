@@ -19,6 +19,11 @@ const authStore = useAuthStore();
       <div>
         <RouterLink :to="{ name: 'register' }" class="nav-link">Registrar</RouterLink>
       </div>
+
+      <div>
+        <RouterLink :to="{ name: 'home' }" class="nav-link">Produto</RouterLink>
+      </div>
+
     </nav>
   </header>
 
