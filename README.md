@@ -1,100 +1,158 @@
-Este projeto demonstra a integração entre o backend Laravel 11 e o frontend Vue 3, utilizando tecnologias modernas para criar uma aplicação web completa.
+# Projeto
 
-Tecnologias Utilizadas
-Backend:
+* Este projeto demonstra a integração entre o backend Laravel 11 e o frontend Vue 3, utilizando tecnologias modernas para criar uma aplicação web completa.
+<hr/>
 
-Laravel 11: Framework PHP para estrutura e organização do backend.
-MySQL: Banco de dados relacional para armazenamento de dados.
-Frontend:
+# Tecnologias Utilizadas
+<hr/>
 
-Vue 3: Framework JavaScript para construção da interface do usuário.
-Bootstrap: Framework CSS para estilos e componentes visuais.
-Tailwind CSS: Framework CSS utilitário para customização e flexibilidade de design.
-Pré-requisitos
-Git: Sistema de controle de versão.
-Composer: Gerenciador de dependências para PHP (Laravel).
-Node.js e npm: Ambiente de execução JavaScript e gerenciador de pacotes (Vue).
-MySQL: Banco de dados.
-Instalação
-Backend (Laravel)
-Clonar o repositório:
+# Backend:
+
+- Laravel 11: Framework PHP para estrutura e organização do backend.
+- MySQL: Banco de dados relacional para armazenamento de dados.
+<hr/>
+
+# Frontend:
+
+- Vue 3: Framework JavaScript para construção da interface do usuário.
+- Bootstrap: Framework CSS para estilos e componentes visuais.
+- Tailwind CSS: Framework CSS utilitário para customização e flexibilidade de design.
+<hr/>
+
+# Pré-requisitos
+
+1) Git: Sistema de controle de versão.
+2) Composer: Gerenciador de dependências para PHP (Laravel).
+3) Node.js e npm: Ambiente de execução JavaScript e gerenciador de pacotes (Vue).
+4) MySQL: Banco de dados.
+<hr/>
+
+# Instalação
+
+# Backend (Laravel)
+<hr/>
+
+1) Clonar o repositório:
 
 Bash
-git clone <URL_DO_REPOSITORIO_BACKEND>
-Use o código com cuidado.
 
-Instalar dependências:
+git clone <URL_DO_REPOSITORIO>
+<hr/>
+
+
+2) Instalar dependências:
 
 Bash
+
 cd nome_do_projeto_backend
+
+Bash
+
 composer install
-Use o código com cuidado.
+<hr/>
 
-Configurar o ambiente:
+3) Configurar o ambiente:
 
-Copiar .env.example para .env
-Gerar chave da aplicação: php artisan key:generate
-Configurar as informações de conexão com o banco de dados em .env.
-Criar o banco de dados:
+- Copiar .env.example para .env
+- Gerar chave da aplicação: php artisan key:generate
+- Configurar as informações de conexão com o banco de dados em .env.
+<hr/>
 
-Criar o banco de dados no MySQL.
-Executar as migrations:
+4) Criar o banco de dados:
+
+- Criar o banco de dados no MySQL.
+<hr/>
+
+5) Executar as migrations:
 
 Bash
+
 php artisan migrate
-Use o código com cuidado.
+<hr/>
 
-Frontend (Vue)
-Clonar o repositório:
+# Frontend (Vue)
+<hr/>
 
-Bash
-git clone <URL_DO_REPOSITORIO_FRONTEND>
-Use o código com cuidado.
-
-Instalar dependências:
+1) Clonar o repositório:
 
 Bash
+
+git clone <URL_DO_REPOSITORIO>
+<hr/>
+
+2) Instalar dependências:
+
+Bash
+
 cd nome_do_projeto_frontend
-npm install
-Use o código com cuidado.
-
-Compilar os assets:
 
 Bash
+
+npm install
+<hr/>
+
+3) Compilar os assets:
+
+Bash
+
 npm run dev 
-Use o código com cuidado.
 
 ou
 
 Bash
 npm run build
-Use o código com cuidado.
+<hr/>
 
-Execução
-Iniciar o servidor Laravel:
+4) Execução
+
+Iniciar o servidor Backend:
 
 Bash
+
 php artisan serve
-Use o código com cuidado.
+<hr/>
 
 Acessar o projeto:
 
-Abra o navegador e acesse http://localhost:8000.
+**[Abra o navegador e acesse http://localhost:5173]**
+<hr/>
 
-Contribuição
-Sinta-se à vontade para contribuir com o projeto! Siga estes passos:
+5) Telas
+<hr>
+- Login
 
-Faça um fork do repositório.
-Crie uma branch para sua feature: git checkout -b minha-feature
-Faça commit das suas alterações: git   
-commit -am 'Adicionando minha feature'
-Faça push para a branch: git push origin minha-feature
-Abra um Pull Request.
-Licença
-Este projeto está licenciado sob a licença MIT - veja o arquivo LICENSE.md para detalhes.   
+<img src="./crud-products/src/assets/proj/login.png" width="400" height="400" alt="Login Tela">
 
-Observações:
+- Registro
 
-Substitua <URL_DO_REPOSITORIO_BACKEND> e <URL_DO_REPOSITORIO_FRONTEND> pelas URLs corretas dos seus repositórios.
-Adapte os comandos e configurações de acordo com a estrutura do seu projeto.
-Mantenha a documentação atualizada conforme o projeto evolui.
+<img src="./crud-products/src/assets/proj/new-register.png" width="400" height="400" alt="Registro Tela">
+
+- Categorias
+
+<img src="./crud-products/src/assets/proj/categorias.png" width="400" height="400" alt="Categoria Tela">
+
+- New Produto
+
+<img src="./crud-products/src/assets/proj/add-produto.png" width="400" height="400" alt="New Produto Tela">
+<hr/>
+
+# Contribuição
+<hr/>
+
+* Sinta-se à vontade para contribuir com o projeto! Siga estes passos:
+
+1) Faça um fork do repositório.
+2) Crie uma branch para sua feature: git checkout -b minha-feature
+3) Faça commit das suas alterações: git   
+4) commit -am 'Adicionando minha feature'
+5) Faça push para a branch: git push origin minha-feature
+6) Abra um Pull Request.
+<hr/>
+
+# Observações:
+<hr/>
+
+1) Substitua <URL_DO_REPOSITORIO_BACKEND> e <URL_DO_REPOSITORIO_FRONTEND> pelas URLs corretas dos seus repositórios.
+2) Adapte os comandos e configurações de acordo com a estrutura do seu projeto.
+3) Mantenha a documentação atualizada conforme o projeto evolui.
+<hr/>
