@@ -13,24 +13,29 @@
         </ul>
 
         <div class="mb-3">
-          <label for="">Nome do Produto</label>
-          <input type="text" v-model="model.produto.nome" class="form-control"/>
+          <label for="nome">Nome do Produto</label>
+          <input type="text" id="nome" v-model="model.produto.nome" class="form-control" />
         </div>
         <div class="mb-3">
-          <label for="">Descrição</label>
-          <input type="text" v-model="model.produto.descricao" class="form-control"/>
+          <label for="descricao">Descrição</label>
+          <input type="text" id="descricao" v-model="model.produto.descricao" class="form-control" />
         </div>
         <div class="mb-3">
-          <label for="">Preço</label>
-          <input type="text" v-model="model.produto.preco" class="form-control"/>
+          <label for="preco">Preço</label>
+          <input type="text" id="preco" v-model="model.produto.preco" class="form-control" />
         </div>
         <div class="mb-3">
-          <label for="">Data de Validade</label>
-          <input type="text" v-model="model.produto.data_de_validade" class="form-control"/>
+          <label for="imagem">Imagem</label>
+          <input type="file" id="imagem" @change="onImageChange" accept="image/jpeg, image/png" class="form-control" />
+          <img v-if="model.produto.imagem_preview" :src="model.produto.imagem_preview" alt="Image Preview" class="mt-2" style="max-width: 200px;">
         </div>
         <div class="mb-3">
-          <label for="">Categoria ID</label>
-          <input type="text" v-model="model.produto.categoria_id" class="form-control"/>
+          <label for="data_de_validade">Data de Validade</label>
+          <input type="date" id="data_de_validade" v-model="model.produto.data_de_validade" class="form-control" />
+        </div>
+        <div class="mb-3">
+          <label for="categoria_id">Categoria ID</label>
+          <input type="text" id="categoria_id" v-model="model.produto.categoria_id" class="form-control" />
         </div>
         <div class="mb-3">
           <button type="button" @click="saveProduto" class="btn btn-primary">Salvar</button>
@@ -45,29 +50,57 @@ import axios from 'axios';
 
 export default {
   name: 'produtoCreate',
-  data(){
+  data() {
     return {
       errorList: '',
       model: {
-        produto : {
+        produto: {
           nome: '',
           descricao: '',
           preco: '',
           data_de_validade: '',
-          imagem: '',
+          imagem: null, 
+          imagem_preview: null, 
           categoria_id: ''
         }
       }
     }
   },
   methods: {
+    onImageChange(event) {
+      const file = event.target.files[0];
+      this.model.produto.imagem = file;
 
-    
-    saveProduto(){
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          this.model.produto.imagem_preview = e.target.result;
+        };
+        reader.readAsDataURL(file);
+      } else {
+        this.model.produto.imagem_preview = null;
+      }
+    },
 
+    saveProduto() {
       var mythis = this;
-      
-      axios.post('http://127.0.0.1:8000/api/produto/', this.model.produto)
+      let formData = new FormData();
+
+      for (const key in this.model.produto) {
+        if (key !== 'imagem_preview') { 
+          formData.append(key, this.model.produto[key]);
+        }
+      }
+
+      if (this.model.produto.imagem) {
+        formData.append('imagem', this.model.produto.imagem);
+      }
+
+      axios.post('http://127.0.0.1:8000/api/produto/', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      })
       .then(res => {
         console.log(res.data);
         alert(res.data.message);
@@ -76,18 +109,16 @@ export default {
           descricao: '',
           preco: '',
           data_de_validade: '',
-          imagem: '',
+          imagem: null,
+          imagem_preview: null,
           categoria_id: ''
-        }
+        };
       })
       .catch(function (error) {
-        if(error.response) {
-          if(error.response.status == 422) {
+        if (error.response) {
+          if (error.response.status == 422) {
             mythis.errorList = error.response.data.errors;
           }
-          //console.log(error.response.data);
-          //console.log(error.response.status);
-          //console.log(error.response.headers);
         } else if (error.request) {
           console.log(error.request);
         } else {
@@ -95,8 +126,6 @@ export default {
         }
       });
     }
-
-  },
+  }
 }
-
 </script>

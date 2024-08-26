@@ -1,66 +1,100 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+Este projeto demonstra a integração entre o backend Laravel 11 e o frontend Vue 3, utilizando tecnologias modernas para criar uma aplicação web completa.
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Tecnologias Utilizadas
+Backend:
 
-## About Laravel
+Laravel 11: Framework PHP para estrutura e organização do backend.
+MySQL: Banco de dados relacional para armazenamento de dados.
+Frontend:
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Vue 3: Framework JavaScript para construção da interface do usuário.
+Bootstrap: Framework CSS para estilos e componentes visuais.
+Tailwind CSS: Framework CSS utilitário para customização e flexibilidade de design.
+Pré-requisitos
+Git: Sistema de controle de versão.
+Composer: Gerenciador de dependências para PHP (Laravel).
+Node.js e npm: Ambiente de execução JavaScript e gerenciador de pacotes (Vue).
+MySQL: Banco de dados.
+Instalação
+Backend (Laravel)
+Clonar o repositório:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Bash
+git clone <URL_DO_REPOSITORIO_BACKEND>
+Use o código com cuidado.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Instalar dependências:
 
-## Learning Laravel
+Bash
+cd nome_do_projeto_backend
+composer install
+Use o código com cuidado.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Configurar o ambiente:
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Copiar .env.example para .env
+Gerar chave da aplicação: php artisan key:generate
+Configurar as informações de conexão com o banco de dados em .env.
+Criar o banco de dados:
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Criar o banco de dados no MySQL.
+Executar as migrations:
 
-## Laravel Sponsors
+Bash
+php artisan migrate
+Use o código com cuidado.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+Frontend (Vue)
+Clonar o repositório:
 
-### Premium Partners
+Bash
+git clone <URL_DO_REPOSITORIO_FRONTEND>
+Use o código com cuidado.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+Instalar dependências:
 
-## Contributing
+Bash
+cd nome_do_projeto_frontend
+npm install
+Use o código com cuidado.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Compilar os assets:
 
-## Code of Conduct
+Bash
+npm run dev 
+Use o código com cuidado.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+ou
 
-## Security Vulnerabilities
+Bash
+npm run build
+Use o código com cuidado.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Execução
+Iniciar o servidor Laravel:
 
-## License
+Bash
+php artisan serve
+Use o código com cuidado.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Acessar o projeto:
+
+Abra o navegador e acesse http://localhost:8000.
+
+Contribuição
+Sinta-se à vontade para contribuir com o projeto! Siga estes passos:
+
+Faça um fork do repositório.
+Crie uma branch para sua feature: git checkout -b minha-feature
+Faça commit das suas alterações: git   
+commit -am 'Adicionando minha feature'
+Faça push para a branch: git push origin minha-feature
+Abra um Pull Request.
+Licença
+Este projeto está licenciado sob a licença MIT - veja o arquivo LICENSE.md para detalhes.   
+
+Observações:
+
+Substitua <URL_DO_REPOSITORIO_BACKEND> e <URL_DO_REPOSITORIO_FRONTEND> pelas URLs corretas dos seus repositórios.
+Adapte os comandos e configurações de acordo com a estrutura do seu projeto.
+Mantenha a documentação atualizada conforme o projeto evolui.
