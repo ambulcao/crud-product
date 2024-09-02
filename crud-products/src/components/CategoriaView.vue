@@ -16,14 +16,20 @@
 
     <Modal v-if="showModal" :categoria="selectedCategoria" @close="closeModal" :show-modal="showModal" />
 
-    <div class="d-flex justify-content-end">
-            <router-link
-                :to="{ name: 'produto' }"
-                class="btn btn-primary mt-3"
-            >
-                Gerenciar Produto
-            </router-link>
-        </div>
+    <div class="d-flex justify-content-around">
+      <div class="d-flex justify-content-start">
+        <router-link :to="{ name: 'categoriaCreate' }" class="btn btn-primary mt-3">
+          Add Categoria
+        </router-link>
+      </div>
+
+      <div class="d-flex justify-content-end">
+        <router-link :to="{ name: 'produto' }" class="btn btn-primary mt-3">
+          Gerenciar Produto
+        </router-link>
+      </div>
+
+    </div>
   </div>
 </template>
 
@@ -32,7 +38,7 @@ import { onMounted, ref, nextTick } from 'vue';
 import axios from 'axios';
 import $ from 'jquery';
 import 'datatables.net';
-import Modal from './mod/ShowModal.vue'; 
+import Modal from './mod/ShowModal.vue';
 
 const categorias = ref([]);
 const showModal = ref(false);
@@ -44,7 +50,7 @@ function closeModal() {
 
 onMounted(async () => {
   try {
-    const response = await axios.get('/api/categoria'); 
+    const response = await axios.get('/api/categoria');
     categorias.value = response.data;
 
     nextTick(() => {
